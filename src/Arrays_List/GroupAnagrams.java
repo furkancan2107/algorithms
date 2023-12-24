@@ -23,7 +23,7 @@ Output: [["a"]]
         System.out.println(groupAnagrams(list));
     }
     public static List<List<String>> groupAnagrams(String[] strs) {
-        List<List<String>> list=new ArrayList<>();
+
         Map<String,List<String>> anagrams=new HashMap<>();
         for(String s : strs){
             char[] chars=s.toCharArray();
