@@ -10,12 +10,20 @@ Output: 9
 *
 * */
 public class TrappingRainWater {
+    public static void main(String[] args) {
+        trap(new int[] {4,2,0,3,2,5});
+        //
+    }
 
-    public int trap(int[] height) {
-       int i=1;
-       while (i<height.length){
-
-       }
-       return i;
+    public static int trap(int[] height) {
+        int total=0;
+        for(int i=2;i<height.length-1;i+=2){
+           int min=Math.min(height[i-1],height[i+1]);
+           int max=Math.max(height[i-1],height[i+1]);
+           int min2=Math.min(max,height[i]);
+           total+=max-min2;
+            System.out.println(total);
+        }
+        return total;
     }
 }

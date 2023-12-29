@@ -19,7 +19,7 @@ public class ValidSudoku {
         char[][] board={
                 {'5','3','.','.','7','.','.','.','.'},
                 {'6','.','.','1','9','5','.','.','.'},
-                {'.','9','8','.','.','.','.','6','.'},
+                {'.','.','8','.','.','.','.','6','.'},
                 {'8','.','.','.','6','.','.','.','3'},
                 {'4','.','.','8','.','3','.','.','1'},
                 {'7','.','.','.','2','.','.','.','6'},
@@ -33,8 +33,9 @@ public class ValidSudoku {
 
         // satir kontrol
         for(int i=0;i<board.length;i++){
+            Set<Character> unique=new HashSet<>();
             for(int j=0;j<board.length;j++){
-                Set<Character> unique=new HashSet<>();
+
                 if(board[i][j]=='.'){
                     continue;
                 }
@@ -46,15 +47,18 @@ public class ValidSudoku {
         }
         // sütün  kontrol
         for(int i=0;i<board.length;i++){
+            Set<Character> unique=new HashSet<>();
             for(int j=0;j<board.length;j++){
-                Set<Character> unique=new HashSet<>();
+
                 if(board[j][i]=='.'){
                     continue;
                 }
                 if(unique.contains(board[j][i])){
                     return false;
                 }
+
                 unique.add(board[j][i]);
+
             }
         }
         // 3*3 lük matris kontroolleri
